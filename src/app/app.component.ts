@@ -9,7 +9,7 @@ export class AppComponent {
   data: any;
   selected: number;
   constructor(private http: HttpClient) {
-    this.showConfig();
+
   }
 
   configUrl =
@@ -22,15 +22,13 @@ export class AppComponent {
   showConfig() {
     this.getConfig().subscribe(dataRes => {
       this.data = dataRes;
+      this.selected = this.generateRandomInteger(0, this.data.length);
     });
   }
 
-  luckyMe() {
-    this.selected = this.generateRandomInteger(0, this.data.values.length);
-  }
   generateRandomInteger(min, max) {
-    return Math.floor(min + Math.random() * (max + 1 - min));
-  }
+  return Math.floor(min + Math.random()*(max + 1 - min))
+}
 }
 
 /*

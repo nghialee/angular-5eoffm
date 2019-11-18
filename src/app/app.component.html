@@ -1,17 +1,15 @@
 <app-top-bar></app-top-bar>
 
 <div class="container">
-	<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
- 
-
-<button (click)="luckyMe()">Click</button>
-<div>{{data.values[selected]}}</div>
-<ul *ngIf="data">
-	<li *ngFor="let hero of data.values">
-		{{ hero }}
-	</li>
-</ul>
+<button (click)="showConfig()">Click</button>
+<div *ngIf="selected">{{data.values[selected]}}</div>
+<ul>
+    <li *ngFor="let hero of data.values">
+      {{ hero }}
+    </li>
+  </ul>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
