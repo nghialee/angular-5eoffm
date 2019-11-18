@@ -28,6 +28,7 @@ export class AppComponent {
 
 lucky(){
   this.selected = Math.floor(Math.random() * this.data.values.length);
+  this.selected = this.selected === 0? 1 : this.selected;
   console.log(this.selected);
 //this.selected = this.generateRandomInteger(0, this.data.values.length);
 }
