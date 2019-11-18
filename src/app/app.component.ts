@@ -22,7 +22,7 @@ export class AppComponent {
   showConfig() {
     this.getConfig().subscribe(dataRes => {
       this.data = dataRes;
-      this.selected = this.generateRandomInteger(0, this.data.length);
+      this.selected = this.generateRandomInteger(0, this.data.values.length);
     });
   }
 
