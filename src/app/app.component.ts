@@ -13,7 +13,7 @@ export class AppComponent {
   }
 
   configUrl =
-    "https://sheets.googleapis.com/v4/spreadsheets/1u_GWrcWvMA1JyZn7c2-3DRizULz_U94BDYNnVezRp-A/values/A2:D15?key=AIzaSyBKIBofPF8VRrsvWmMqfjDGxTdEGIR7mLc";
+    "https://sheets.googleapis.com/v4/spreadsheets/1u_GWrcWvMA1JyZn7c2-3DRizULz_U94BDYNnVezRp-A/values/A2:E8?key=AIzaSyBKIBofPF8VRrsvWmMqfjDGxTdEGIR7mLc";
 
   getConfig() {
     return this.http.get(this.configUrl);
@@ -27,7 +27,7 @@ export class AppComponent {
   }
 
 lucky(){
-  this.selected = Math.floor(Math.random() * 10 + 1);
+  this.selected = Math.floor(Math.random() * this.data.values.length);
   console.log(this.selected);
 //this.selected = this.generateRandomInteger(0, this.data.values.length);
 }
