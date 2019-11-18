@@ -1,6 +1,6 @@
-<button (click)="showConfig()">Click</button>
+<button (click)="showConfig()">I'm feeling lucky</button>
 <div *ngIf="selected">
-  {{data.values[selected]}}</div>
+  {{data.values[selected][1]}}</div>
 <ul *ngIf="data">
 	<li *ngFor="let hero of data.values">
 		{{ hero }}
