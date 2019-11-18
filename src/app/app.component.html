@@ -31,12 +31,20 @@
 
 
 	</div>
+
+	<div>
+
+		<ul style="list-style-type:none" *ngIf="data">
+			<li style="    background: white;
+    height: 50px;
+    margin-right: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    color: gray;" *ngFor="let hero of data.values">
+				{{ hero[1] }}
+			</li>
+		</ul>
+	</div>
+
 </div>
-
-
-
-<!-- <ul *ngIf="data">
-	<li *ngFor="let hero of data.values">
-		{{ hero }}
-	</li>
-</ul> -->
