@@ -33,10 +33,11 @@ export class AppComponent {
         this.filteredList.push(item);
       }
     });
+    this.lucky();
   }
 
   lucky() {
-    this.selected = Math.floor(Math.random() * this.data.values.length);
+    this.selected = Math.floor(Math.random() *  this.filteredList.length +1);
     this.selected = this.selected === 0 ? 1 : this.selected;
     console.log(this.selected);
     //this.selected = this.generateRandomInteger(0, this.data.values.length);
