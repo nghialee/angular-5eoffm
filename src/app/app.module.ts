@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    ReactiveFormsModule,
       HttpClientModule
   ],
   declarations: [
