@@ -12,7 +12,16 @@
     font-weight: bold;">Foome</span>
 	</div>
 
-
+	<button style="cursor: pointer;
+    font-weight: bold;
+    border-radius:53px;
+    height: 45px;
+    text-align: center; margin-bottom: 20px; margin-top: 20px;" (click)="filter('Food')">Food</button>
+    	<button style="cursor: pointer;
+    font-weight: bold;
+    border-radius:53px;
+    height: 45px;
+    text-align: center; margin-bottom: 20px; margin-top: 20px;" (click)="filter('Beverage')">Beverage</button>
 
 	<div style="text-align: center">
 
@@ -23,7 +32,7 @@
     color: gray;
     text-align: left;
     padding-left: 20px; margin: 20px; background: white;">
-			<span *ngIf="selected">	{{data.values[selected -1 ][1]}}</span>
+			<span *ngIf="selected">	{{filteredList[selected -1 ][1]}}</span>
 		</div>
 		<!-- <div>
 			<span *ngIf="selected">	{{data.values[selected -1 ][2]}}</span>
@@ -32,7 +41,7 @@
 		<div style="height: 10px">
 			<div *ngIf="selected">
 				<span *ngFor="let star of [1,2,3,4,5], index as i">
-      <i style="color: #ffeb00;margin: 0 15px;" class="fa"  [ngClass]="{'fa-star':(i <= data.values[selected -1 ][6]-1), 'fa-star-o':(i>data.values[selected -1 ][6]-1)}"  aria-hidden="true"></i>
+      <i style="color: #ffeb00;margin: 0 15px;" class="fa"  [ngClass]="{'fa-star':(i <= filteredList[selected -1 ][6]-1), 'fa-star-o':(i>filteredList[selected -1 ][6]-1)}"  aria-hidden="true"></i>
     </span>
 			</div>
 		</div>
@@ -54,7 +63,7 @@
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 3px;
-    color: gray;" *ngFor="let hero of data.values">
+    color: gray;" *ngFor="let hero of filteredList">
 				{{ hero[1] }}
 			</li>
 		</ul>

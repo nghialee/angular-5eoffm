@@ -8,10 +8,10 @@ import { HttpClient } from "@angular/common/http";
 export class AppComponent {
   data: any;
   selected: number;
+  filteredList: Array<any> = new Array();
   constructor(private http: HttpClient) {
     this.showConfig();
   }
-
 
   configUrl =
     "https://sheets.googleapis.com/v4/spreadsheets/1u_GWrcWvMA1JyZn7c2-3DRizULz_U94BDYNnVezRp-A/values/A2:G100?key=AIzaSyBKIBofPF8VRrsvWmMqfjDGxTdEGIR7mLc";
@@ -23,16 +23,24 @@ export class AppComponent {
   showConfig() {
     this.getConfig().subscribe(dataRes => {
       this.data = dataRes;
-      
     });
   }
 
-lucky(){
-  this.selected = Math.floor(Math.random() * this.data.values.length);
-  this.selected = this.selected === 0? 1 : this.selected;
-  console.log(this.selected);
-//this.selected = this.generateRandomInteger(0, this.data.values.length);
-}
+  filter(type: string) {
+    this.filteredList = [];
+    this.data.values.forEach(item => {
+      if (item[4] === type) {
+        this.filteredList.push(item);
+      }
+    });
+  }
+
+  lucky() {
+    this.selected = Math.floor(Math.random() * this.data.values.length);
+    this.selected = this.selected === 0 ? 1 : this.selected;
+    console.log(this.selected);
+    //this.selected = this.generateRandomInteger(0, this.data.values.length);
+  }
 
   // generateRandomInteger(min, max) {
   //   return Math.floor(min + Math.random() * (max + 1 - min));
