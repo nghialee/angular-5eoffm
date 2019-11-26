@@ -16,6 +16,32 @@ p {
 		width: 100%;
 		height: 100%;
 	}
+.app-bar{
+    color: white;
+    text-transform: uppercase;
+    line-height: 50px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+  .app-wrapper{
+    max-width: 500px;
+    margin: 0 auto;
+    min-height: 500px;
+    background: #fdfdfd;   
+  }
+
+  .filter-btn{
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 45px;
+    text-align: center;
+    display: inline;
+    width: 100%;
+    text-transform: uppercase;
+    background: #eaeaea;
+    color: gray;
+  }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

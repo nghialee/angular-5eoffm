@@ -7,8 +7,12 @@ import { HttpClient } from "@angular/common/http";
 })
 export class AppComponent {
   data: any;
+  mode: string = "Expensive";
+
   selected: number;
+  isFinish: boolean = true;
   filteredList: Array<any> = new Array();
+  filteredModeList: Array<any> = new Array();
   constructor(private http: HttpClient) {
     this.showConfig();
   }
@@ -23,26 +27,51 @@ export class AppComponent {
   showConfig() {
     this.getConfig().subscribe(dataRes => {
       this.data = dataRes;
+      this.changeMode();
+    });
+  }
+
+  changeMode() {
+    this.mode = this.mode == "Cheap" ? "Expensive" : "Cheap";
+    console.log(this.mode);
+    this.filteredList = [];
+    this.filteredModeList = [];
+    this.data.values.forEach(item => {
+      if (item[3] === this.mode) {
+        this.filteredModeList.push(item);
+      }
     });
   }
 
   filter(type: string) {
     this.filteredList = [];
-    this.data.values.forEach(item => {
+    this.selected = undefined;
+    this.filteredModeList.forEach(item => {
       if (item[4] === type) {
         this.filteredList.push(item);
       }
     });
-    this.lucky();
+    //this.lucky();
   }
 
   lucky() {
-    this.selected = Math.floor(Math.random() *  this.filteredList.length +1);
-    this.selected = this.selected === 0 ? 1 : this.selected;
-    console.log(this.selected);
-    //this.selected = this.generateRandomInteger(0, this.data.values.length);
+    let self = this;
+    let count = 0;
+    self.isFinish = false;
+    let timerID = setInterval(() => {
+      if (count < 30) {
+        self.selected = Math.floor(
+          Math.random() * this.filteredList.length + 1
+        );
+        self.selected = this.selected === 0 ? 1 : this.selected;
+        console.log(this.selected);
+        count = count + 1;
+      } else {
+        clearInterval(timerID);
+        self.isFinish = true;
+      }
+    }, 30);
   }
-
   // generateRandomInteger(min, max) {
   //   return Math.floor(min + Math.random() * (max + 1 - min));
   // }

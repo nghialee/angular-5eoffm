@@ -1,46 +1,24 @@
-<div style="    max-width: 500px;
-    margin: 0 auto;
-    min-height: 500px;
-    background: #fdfdfd;   ">
+<div class="app-wrapper">
 	<div style="background: #1976d2;
     height: 50px;
     margin-bottom: 20px;">
-		<span style="    color: white;
-    text-transform: uppercase;
-    line-height: 50px;
-    margin-left: 20px;
-    font-weight: bold;">Foome</span>
+		<span class="app-bar">Foome</span>
+    <button style="    float: right;
+    margin-top: 7px;
+    margin-right: 8px;
+    border: 2px solid white;
+    border-radius: 50px;" (click)="changeMode()">{{mode}} Mode</button>
 	</div>
 	<div style="display: flex;">
 		<div style="width:50%; padding: 0 20px;">
-			<button style="    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-    height: 45px;
-    text-align: center;
-    display: inline;width: 100%;
-    text-transform: uppercase;
-    background: #eaeaea;
-    color: gray;" (click)="filter('Food')">Food</button>
+			<button class="filter-btn" (click)="filter('Food')">Food</button>
 		</div>
 		<div style="width:50%; padding: 0 20px;">
-			<button style="    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-    height: 45px;
-    width: 100%;
-    text-align: center;
-    display: inline;
-    text-transform: uppercase;
-    background: #eaeaea;
-    color: gray;" (click)="filter('Beverage')">Beverage</button>
+			<button class="filter-btn" (click)="filter('Beverage')">Beverage</button>
 		</div>
-
-
 	</div>
 	<div *ngIf="filteredList.length">
 		<div style="text-align: center">
-
 			<div style="border: 1px solid #e2e2e2;
     height: 50px;
     border-radius: 34px;
@@ -55,7 +33,7 @@
 		</div> -->
 
 			<div style="height: 10px">
-				<div *ngIf="selected">
+				<div *ngIf="selected && isFinish">
 					<span *ngFor="let star of [1,2,3,4,5], index as i">
       <i style="color: #ffeb00;margin: 0 15px;" class="fa"  [ngClass]="{'fa-star':(i <= filteredList[selected -1 ][6]-1), 'fa-star-o':(i>filteredList[selected -1 ][6]-1)}"  aria-hidden="true"></i>
     </span>
