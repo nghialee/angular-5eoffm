@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class AppComponent {
   data: any;
-  mode: string = "Expensive";
+  mode: string = undefined;
 
   selected: number;
   isFinish: boolean = true;
