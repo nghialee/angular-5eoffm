@@ -19,14 +19,14 @@
 	</div>
 	<div *ngIf="filteredList.length">
 		<div style="text-align: center">
-			<div style="border: 1px solid #e2e2e2;
+			<div [ngClass]="{'green': filteredList[selected -1 ][5] =='YES'}" style="border: 1px solid #e2e2e2;
     height: 50px;
     border-radius: 34px;
     line-height: 50px;
     color: gray;
     text-align: left;
     padding-left: 20px; margin: 20px; background: white;">
-				<span *ngIf="selected">	{{filteredList[selected -1 ][1]}}</span>
+				<span *ngIf="selected" [ngClass]="{'green': filteredList[selected -1 ][5] =='YES'}">	{{filteredList[selected -1 ][1]}}</span>
 			</div>
 			<!-- <div>
 			<span *ngIf="selected">	{{data.values[selected -1 ][2]}}</span>
@@ -51,7 +51,7 @@
 
 		<div>
 			<ul style="list-style-type:none;padding-left: 0;height: 400px;overflow-Y: scroll;" *ngIf="data">
-				<li style="background: white;height: 50px;
+				<li [ngClass]="{'green-bg': hero[5] =='YES'}" style="background: white;height: 50px;
     margin-left: 30px;
     margin-right: 30px;
     padding: 10px;

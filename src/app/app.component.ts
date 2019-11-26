@@ -51,7 +51,7 @@ export class AppComponent {
         this.filteredList.push(item);
       }
     });
-    //this.lucky();
+    this.lucky();
   }
 
   lucky() {
