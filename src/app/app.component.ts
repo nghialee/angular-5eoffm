@@ -12,6 +12,7 @@ export class AppComponent {
     this.showConfig();
   }
 
+
   configUrl =
     "https://sheets.googleapis.com/v4/spreadsheets/1u_GWrcWvMA1JyZn7c2-3DRizULz_U94BDYNnVezRp-A/values/A2:G100?key=AIzaSyBKIBofPF8VRrsvWmMqfjDGxTdEGIR7mLc";
 
