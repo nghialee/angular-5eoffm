@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import * as jquery from 'jquery';
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -20,6 +21,9 @@ export class AppComponent {
   configUrl =
     "https://sheets.googleapis.com/v4/spreadsheets/1u_GWrcWvMA1JyZn7c2-3DRizULz_U94BDYNnVezRp-A/values/A2:G100?key=AIzaSyBKIBofPF8VRrsvWmMqfjDGxTdEGIR7mLc";
 
+  ngOnInit() {
+    $("#carousel").slick({});
+  }
   getConfig() {
     return this.http.get(this.configUrl);
   }

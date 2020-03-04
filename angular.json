@@ -25,7 +25,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui-bundle.1.12.1/jquery-ui.min.js"
+            ]
           },
           "configurations": {
             "production": {
