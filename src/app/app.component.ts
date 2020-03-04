@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import * as jquery from 'jquery';
+import "slick-carousel/slick/slick.js";
+import $ from "jquery";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -22,7 +23,15 @@ export class AppComponent {
     "https://sheets.googleapis.com/v4/spreadsheets/1u_GWrcWvMA1JyZn7c2-3DRizULz_U94BDYNnVezRp-A/values/A2:G100?key=AIzaSyBKIBofPF8VRrsvWmMqfjDGxTdEGIR7mLc";
 
   ngOnInit() {
-    $("#carousel").slick({});
+    $(".slider").slick({
+      slidesToShow: 1,
+      centerMode: true,
+      centerPadding: "60px",
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      dots: true
+    });
   }
   getConfig() {
     return this.http.get(this.configUrl);
