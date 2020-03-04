@@ -25,12 +25,12 @@ export class AppComponent {
   ngOnInit() {
     $(".slider").slick({
       slidesToShow: 1,
-      centerMode: true,
+      centerMode: false,
       centerPadding: "60px",
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 2000,
-      dots: true
+      dots: false
     });
   }
   getConfig() {
