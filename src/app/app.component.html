@@ -12,97 +12,93 @@
 	<div class="slider">
 		<div class="card">
 			<div class="content">
-				<img class="imgs" style="width: 100%;" src="https://lh3.googleusercontent.com/6XRfT1picRrpzeWCPy2yfAWf7lGi1Y6juj8T6c33_KW2dOVVY-tiqfjwNtyBlI8yHEfcIVj_G_iv6KQfdMx_Ai7lqfNwE9-8hBsSM--zbv91xFQLK45gdlivabbMQxT9jY56a5ZO6D7j56hB5hLSc1-R6CpN85_OHXap6SdIRbD4_5--rZ3qJzXO94i7aGvM8VaQUz4M4EfHgK6mt9-5piv-JVQb5sAIaFQn-6fxSefcB70wvwlE4USZ9_Z5iKm8PP-2OqYII6OsDbSmOIzGW0V3kOreJFIV3vQ8wl20W4MmoDmbwu4MLXGJvaDNcB3wZ9wB88m9o8o_ySTuvdKmwTTE7H1Z4sZLCjukaXZagFgmb0OvbOC7PTRwGyew3SbZuy0efTRa6OW40A9BXlFAIErMu9NbJ3OKuBYQM_g1EX9khrB-9q7Z8YEPzHRWk3brZ1hYzEMyV_zy8pH25806nyW5KydqmGYcYMC8YumW_g_RdQDp3AKoIC0AB6cje5YIkGuy5XqUzb8x0f-akDYQcDJSCtDG2hBAeyCT8aOhdiLPILaOQN3SsHYobvlnsmfCU_oDwbju6YtioZ-KfuhvX1l9sWOa5abH9wDGveUqpasYEE14BjFe8N3oEmzz2LMzW6gU52Kb5YBiilfF-PKuYaBEwOQcVNz0k5Z0YDtgonajqS5udHI8sYc=w927-h695-no"/>
+				<img class="imgs" style="width: 100%;" src="https://stackblitz.com/files/foome/github/nghialee/angular-5eoffm/master/src/app/1.JPG"/>
 			</div>
-		</div>
-		<div class="card">
-			<div class="content">
-				<img class="imgs"  style="width: 100%;" src=""/>
+			</div>
+			<div class="card">
+				<div class="content">
+					<img class="imgs"  style="width: 100%;" src=""/>
+			</div>
+				</div>
+				<div class="card">
+					<div class="content"> <img class="imgs"  style="width: 100%;" src=""/>
+			</div>
+					</div>
+					<div class="card">
+						<div class="content"> <img class="imgs"  style="width: 100%;" src=""/>
+
+			</div>
+						</div>
+						<div class="card">
+							<div class="content"> <img class="imgs"  style="width: 100%;" src=""/>
+			</div>
+							</div>
+							<div class="card">
+								<div class="content"><img class="imgs"  style="width: 100%;" src=""/>
+			</div>
+								</div>
+							</div>
 
 
-
-			
-			</div>
-		</div>
-		<div class="card">
-			<div class="content"> <img class="imgs"  style="width: 100%;" src=""/>
-		
-			</div>
-		</div>
-		<div class="card">
-			<div class="content"> <img class="imgs"  style="width: 100%;" src=""/>
-			
-			</div>
-		</div>
-		<div class="card">
-			<div class="content"> <img class="imgs"  style="width: 100%;" src=""/>
-			</div>
-		</div>
-		<div class="card">
-			<div class="content"><img class="imgs"  style="width: 100%;" src=""/>
-			</div>
-		</div>
-	</div>
-
-
-	<div style="display: flex;">
-		<div style="width:50%; padding: 0 20px;">
-			<button class="filter-btn" (click)="filter('Food')">Food</button>
-		</div>
-		<div style="width:50%; padding: 0 20px;">
-			<button class="filter-btn" (click)="filter('Beverage')">Beverage</button>
-		</div>
-	</div>
-	<div *ngIf="filteredList.length">
-		<div style="text-align: center">
-			<div style="border: 1px solid #e2e2e2;
+							<div style="display: flex;">
+								<div style="width:50%; padding: 0 20px;">
+									<button class="filter-btn" (click)="filter('Food')">Food</button>
+								</div>
+								<div style="width:50%; padding: 0 20px;">
+									<button class="filter-btn" (click)="filter('Beverage')">Beverage</button>
+								</div>
+							</div>
+							<div *ngIf="filteredList.length">
+								<div style="text-align: center">
+									<div style="border: 1px solid #e2e2e2;
     height: 50px;
     border-radius: 34px;
     line-height: 50px;
     color: gray;
     text-align: left;
     padding-left: 20px; margin: 20px; background: white;">
-				<span *ngIf="selected" [ngClass]="{'green': filteredList[selected -1 ][5] =='YES'}">	{{filteredList[selected -1 ][1]}}</span>
-			</div>
-			<!-- <div>
+										<span *ngIf="selected" [ngClass]="{'green': filteredList[selected -1 ][5] =='YES'}">	{{filteredList[selected -1 ][1]}}</span>
+									</div>
+									<!-- <div>
 			<span *ngIf="selected">	{{data.values[selected -1 ][2]}}</span>
 		</div> -->
 
-			<div style="height: 10px">
-				<div *ngIf="selected && isFinish">
-					<span *ngFor="let star of [1,2,3,4,5], index as i">
+									<div style="height: 10px">
+										<div *ngIf="selected && isFinish">
+											<span *ngFor="let star of [1,2,3,4,5], index as i">
       <i style="color: #ffeb00;margin: 0 15px;" class="fa"  [ngClass]="{'fa-star':(i <= filteredList[selected -1 ][6]-1), 'fa-star-o':(i>filteredList[selected -1 ][6]-1)}"  aria-hidden="true"></i>
     </span>
-				</div>
-			</div>
+										</div>
+									</div>
 
-			<button style="cursor: pointer;
+									<button style="cursor: pointer;
     font-weight: bold;
     border-radius:53px;
     height: 45px;
     text-align: center; margin-bottom: 20px; margin-top: 20px;" (click)="lucky()">I'm feeling lucky</button>
-		</div>
+								</div>
 
 
 
-		<div>
-			<ul style="list-style-type:none;padding-left: 0;height: 300px;overflow-Y: scroll;" *ngIf="data">
-				<li [ngClass]="{'green-bg': hero[5] =='YES'}" style="background: white;height: 50px;
+								<div>
+									<ul style="list-style-type:none;padding-left: 0;height: 300px;overflow-Y: scroll;"
+										*ngIf="data">
+										<li [ngClass]="{'green-bg': hero[5] =='YES'}" style="background: white;height: 50px;
     margin-left: 30px;
     margin-right: 30px;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 3px;
     color: gray;" *ngFor="let hero of filteredList">
-					{{ hero[1] }}
-				</li>
-			</ul>
-		</div>
+											{{ hero[1] }}
+										</li>
+									</ul>
+								</div>
 
-		<!-- <div class="container">
+								<!-- <div class="container">
 		<iframe class="video" width="560" height="315"
 			src="https://www.youtube.com/embed/k9ugQc0UhZ8?controls=0&autoplay=1" frameborder="0"
 			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</div> -->
-	</div>
-</div>
+							</div>
+						</div>
